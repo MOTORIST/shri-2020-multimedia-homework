@@ -1,47 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Test streams</title>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="initVideo.js"></script>
-    <style>
-        .video {
-            width: 300px;
-            height: 200px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<video id="video-1" class="video" controls muted autoplay></video>
-<video id="video-2" class="video" controls muted autoplay></video>
-<br>
-<video id="video-3" class="video" controls muted autoplay></video>
-<video id="video-4" class="video" controls muted autoplay></video>
-<script>
-    initVideo(
-        document.getElementById('video-1'),
-        'http://localhost:9191/master?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fsosed%2Fmaster.m3u8'
-    );
+<body class="page">
+    <div class="grid">
+        <div class="player">
+            <div class="player__video-wrapper">
+                <video class="player__video"
+                    data-stream="http://localhost:9191/master?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fsosed%2Fmaster.m3u8"
+                    muted controls></video>
+                <div class="player__settings-window">
+                    <div>
+                        <label for="cowbell">Brightness</label>
+                        <input class="player__brightness" type="range" min="0" max="2" step="0.01">
+                    </div>
+                    <div>
+                        <label for="cowbell">Contrast</label>
+                        <input class="player__contrast" type="range" min="0" max="2" step="0.01">
+                    </div>
+                </div>
+            </div>
+            <div class="player__progress">
+                <div class="player__progress-line"></div>
+            </div>
+            <div class="player__controls">
+                <button class="button button_toggle player__fullscreen-button">fullscreen</button>
+                <button class="button button_toggle button player__settings-button">settings</button>
+            </div>
+        </div>
 
-    initVideo(
-        document.getElementById('video-2'),
-        'http://localhost:9191/live?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fstairs%2Fmaster.m3u8'
-    );
+        <div class="player">
+            <div class="player__video-wrapper">
+                <video class="player__video"
+                    data-stream="http://localhost:9191/live?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fstairs%2Fmaster.m3u8"
+                    muted controls></video>
+                <div class="player__settings-window">
+                    <div>
+                        <label for="cowbell">Brightness</label>
+                        <input class="player__brightness" type="range" min="0" max="2" step="0.01">
+                    </div>
+                    <div>
+                        <label for="cowbell">Contrast</label>
+                        <input class="player__contrast" type="range" min="0" max="2" step="0.01">
+                    </div>
+                </div>
+            </div>
+            <div class="player__progress">
+                <div class="player__progress-line"></div>
+            </div>
+            <div class="player__controls">
+                <button class="button button_toggle player__fullscreen-button">fullscreen</button>
+                <button class="button button_toggle player__settings-button">settings</button>
+            </div>
+        </div>
 
-    initVideo(
-        document.getElementById('video-3'),
-        'http://localhost:9191/master?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fdog%2Fmaster.m3u8'
-    );
+        <div class="player">
+            <div class="player__video-wrapper">
+                <video class="player__video"
+                    data-stream="http://localhost:9191/master?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fdog%2Fmaster.m3u8"
+                    muted controls></video>
+                <div class="player__settings-window">
+                    <div>
+                        <label for="cowbell">Brightness</label>
+                        <input class="player__brightness" type="range" min="0" max="2" step="0.01">
+                    </div>
+                    <div>
+                        <label for="cowbell">Contrast</label>
+                        <input class="player__contrast" type="range" min="0" max="2" step="0.01">
+                    </div>
+                </div>
+            </div>
+            <div class="player__progress">
+                <div class="player__progress-line"></div>
+            </div>
+            <div class="player__controls">
+                <button class="button button_toggle player__fullscreen-button">fullscreen</button>
+                <button class="button button_toggle player__settings-button">settings</button>
+            </div>
+        </div>
 
-    initVideo(
-        document.getElementById('video-4'),
-        'http://localhost:9191/live?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fstreet%2Fmaster.m3u8'
-    );
+        <div class="player">
+            <div class="player__video-wrapper">
+                <video class="player__video"
+                    data-stream="http://localhost:9191/live?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fstreet%2Fmaster.m3u8"
+                    muted controls></video>
+                <div class="player__settings-window">
+                    <div>
+                        <label for="cowbell">Brightness</label>
+                        <input class="player__brightness" type="range" min="0" max="2" step="0.01">
+                    </div>
+                    <div>
+                        <label for="cowbell">Contrast</label>
+                        <input class="player__contrast" type="range" min="0" max="2" step="0.01">
+                    </div>
+                </div>
+            </div>
+            <div class="player__progress">
+                <div class="player__progress-line"></div>
+            </div>
+            <div class="player__controls">
+                <button class="button button_toggle player__fullscreen-button">fullscreen</button>
+                <button class="button button_toggle player__settings-button">settings</button>
+            </div>
+        </div>
+    </div>
 
-</script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>

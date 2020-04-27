@@ -1,0 +1,133 @@
+html,
+body {
+  height: 100vh;
+}
+
+.page {
+  background-color: #1e345b;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+}
+
+.grid {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.player {
+  background-color: cornflowerblue;
+  /* если тут поставить, то в сафари глючит fixed не работает - магия */
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.player_fullscreen {
+  position: fixed;
+  z-index: 9999;
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  transition: all 0.2s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.player__video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.player_fullscreen .player__video {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.player__video-wrapper {
+  background-color: black;
+
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+.player__video-wrapper:before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  padding-bottom: calc(9 / 16 * 100%);
+}
+
+.player__settings-window {
+  background-color: rgba(100, 149, 237, 0.7);
+  color: aliceblue;
+
+  box-sizing: border-box;
+  display: none;
+  width: 145px;
+  padding: 5px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 200;
+}
+
+.player_show-settings .player__settings-window {
+  display: block;
+}
+
+.player__controls {
+  padding: 5px;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+
+  background-color: #a09613;
+  color: #d6d3d3;
+}
+
+.button:hover {
+  background-color: #ded451;
+  color: #000;
+}
+
+.button_active {
+  background-color: #fff45f;
+  color: #000;
+}
+
+@media (min-width: 1000px) {
+  .page {
+    padding: 10px 100px;
+  }
+}
